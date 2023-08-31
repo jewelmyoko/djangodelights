@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.urls import path,include
 from . import views
 
@@ -26,11 +25,3 @@ urlpatterns = [
     path('reciperequirements/<int:pk>/updatereciperequirements', views.UpdateRecipeRequirements.as_view(),name = "updatereciperequirements"),
     path('profitrevenue/', views.profitrevenue_list,name = "profitrevenue"),
     
-=======
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('ingredients/', views.IngredientList.as_view(),name = "ingredients"),
->>>>>>> origin/development
-]
