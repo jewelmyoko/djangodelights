@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>Home</title>
+{% endblock %}
+{% block content %}
+        <table>
+            <tr>
+                <th> MenuItem </th>
+                <th> Price </th>
+            </tr>   
+            {% for menuitem in object_list %}
+                <tr>
+                    <td>{{ menuitem.title }}</td>
+                    <td>{{ menuitem.price }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

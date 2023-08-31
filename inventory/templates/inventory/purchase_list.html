@@ -1,0 +1,24 @@
+{% extends 'inventory/staffhome.html' %}
+{% block head %}
+    <title>Purchase List</title>
+{% endblock %}
+{% block content %}
+    <h1>Purchase List</h1>
+    <table>
+        <tr>
+            <th> MenuItem Name </th>
+            <th> Quantity </th>
+            <th> Purchase Date </th>
+        </tr>   
+        {% for purchase in object_list %}
+            <tr>
+                <td>{{ purchase.menu_item }}</td>
+                <td>{{ purchase.quantity }}</td>
+                <td>{{ purchase.purchase_date }}</td>
+                <td><a href="{%  url 'updatepurchases' purchase.id %}">Update</a></td>
+                <td><a href="{%  url 'deletepurchases' purchase.id %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url "addpurchases" %}" style="display: inherit; text-align: center; border-radius: 15px; text-decoration: none; color: inherit; padding: 4px; background-color: lightgreen;">Add</a>
+{% endblock %}

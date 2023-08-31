@@ -1,0 +1,12 @@
+{% extends 'inventory/staffhome.html' %}
+{% block head %}
+    <title>Add MenuItem</title>
+{% endblock %}
+{% block content %}
+    <h1>Add MenuItem</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+	    <input type="submit" value="Add" />
+        <a href="{% url 'menuitems' %}">Cancel</a>
+{% endblock %}

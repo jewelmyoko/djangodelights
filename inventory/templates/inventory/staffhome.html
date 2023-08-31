@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        <title>Staff Home</title>
+    {% endblock %}
+</head>
+    <div class="header-content">
+    <h1 class="header-title">Welcome to Delights Cafe!</h1>
+    {% if user.username %}
+    <h4 class="header-greet">Welcome {{ user.username }}!</h4>
+    {% endif %}
+    </div>
+    <div>
+    <a href="{% url 'ingredients' %}">Ingredient</a>
+    <a href="{% url 'menuitems' %}">MenuItem</a>
+    <a href="{% url 'purchases' %}">Purchases</a>
+    <a href="{% url 'reciperequirements' %}">RecipeRequirements</a>
+    <a href="{% url 'profitrevenue' %}">ProfitRevenue</a>
+    </div>
+    <div class="header">
+        {% comment %} <img src="{% static 'weeklydessert/Dessert.png' %}" >{% endcomment %}
+        {% if user.username %}
+          {% comment %} Add your logout link below {% endcomment %}
+        <a href="{% url 'logout' %}">Log Out</a>
+      {% endif %}
+    </div>
+{% block content %}
+{% endblock %}
+</html>

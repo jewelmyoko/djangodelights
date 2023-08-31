@@ -1,0 +1,24 @@
+{% extends 'inventory/staffhome.html' %}
+{% block head %}
+    <title>Ingredient List</title>
+{% endblock %}
+{% block content %}
+    <h1>Ingredient List</h1>
+    <table>
+        <tr>
+            <th>Ingredient Name</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+        </tr>       
+        {% for ingredient in object_list %}
+            <tr>
+                <td>{{ ingredient.name }}</td>
+                <td>{{ ingredient.quantity }}</td>
+                <td>{{ ingredient.unit_price }}</td>
+                <td><a href="{%  url 'updateingredient' ingredient.id %}">Update</a></td>
+                <td><a href="{%  url 'deleteingredient' ingredient.id %}">Delete</a></td>
+            </tr>          
+        {% endfor %}
+    </table>
+    <a href="{% url "addingredient" %}" style="display: inherit; text-align: center; border-radius: 15px; text-decoration: none; color: inherit; padding: 4px; background-color: lightgreen;">Add</a>
+{% endblock %}

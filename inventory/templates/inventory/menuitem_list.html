@@ -1,0 +1,22 @@
+{% extends 'inventory/staffhome.html' %}
+{% block head %}
+    <title>MenuItem List</title>
+{% endblock %}
+{% block content %}
+    <h1>MenuItem List</h1>
+    <table>
+        <tr>
+            <th> Title </th>
+            <th> Price </th>
+        </tr>   
+        {% for menuitem in object_list %}
+            <tr>
+                <td>{{ menuitem.title }}</td>
+                <td>{{ menuitem.price }}</td>
+                <td><a href="{%  url 'updatemenuitems' menuitem.id %}">Update</a></td>
+                <td><a href="{%  url 'deletemenuitems' menuitem.id %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url "addmenuitems" %}" style="display: inherit; text-align: center; border-radius: 15px; text-decoration: none; color: inherit; padding: 4px; background-color: lightgreen;">Add</a>
+{% endblock %}

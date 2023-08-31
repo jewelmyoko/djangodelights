@@ -1,0 +1,24 @@
+{% extends 'inventory/staffhome.html' %}
+{% block head %}
+    <title>Purchase List</title>
+{% endblock %}
+{% block content %}
+    <h1>Purchase List</h1>
+    <table>
+        <tr>
+            <th> MenuItem Name </th>
+            <th> Ingredient </th>
+            <th> Quantity </th>
+        </tr>   
+        {% for reciperequirements in object_list %}
+            <tr>
+                <td>{{ reciperequirements.menu_item }}</td>
+                <td>{{ reciperequirements.ingredient }}</td>
+                <td>{{ reciperequirements.quantity }}</td>
+                <td><a href="{%  url 'updatereciperequirements' reciperequirements.id %}">Update</a></td>
+                <td><a href="{%  url 'deletereciperequirements' reciperequirements.id %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        <a href="{% url "addreciperequirements" %}" style="display: inherit; text-align: center; border-radius: 15px; text-decoration: none; color: inherit; padding: 4px; background-color: lightgreen;">Add</a>
+    </table>
+{% endblock %}

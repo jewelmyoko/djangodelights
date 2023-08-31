@@ -1,0 +1,12 @@
+{% extends 'inventory/staffhome.html' %}
+{% block head %}
+    <title>Delete Ingredients</title>
+{% endblock %}
+{% block content %}
+    <h1>Delete Ingredients</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ object }}"?</p>
+	    <input type="submit" value="Confirm" />
+        <a href="{% url 'ingredients' %}">Cancel</a>
+{% endblock %}
