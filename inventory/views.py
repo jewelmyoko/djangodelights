@@ -122,4 +122,3 @@ def profitrevenue_list(request):
         'profit': profit,
     }
     return render(request, 'inventory/profitrevenue_list.html', context)
-

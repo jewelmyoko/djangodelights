@@ -6,3 +6,4 @@ admin.site.register(Ingredient)
 admin.site.register(MenuItem)
 admin.site.register(Purchase)
 admin.site.register(RecipeRequirements)
+
