@@ -122,9 +122,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'staffhome'
-LOGOUT_REDIRECT_URL = 'staffhome'
-
-
 CSRF_COOKIE_SAMESITE = 'None'
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SAMESITE = 'None'
