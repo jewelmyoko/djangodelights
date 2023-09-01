@@ -41,8 +41,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -129,5 +129,6 @@ SESSION_COOKIE_SECURE = True
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8080',
-    'http://54.212.118.126',   
+    'http://54.212.118.126',
+    'http://ec2-54-212-118-126.us-west-2.compute.amazonaws.com',
     ]
