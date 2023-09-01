@@ -9,7 +9,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout
-from django.views.decorators.csrf import csrf_exempt
 
 class Home(ListView):
     model = MenuItem
@@ -104,7 +103,6 @@ class DeleteRecipeRequirements(LoginRequiredMixin,DeleteView):
     template_name = "inventory/delete_reciperequirements.html"
     success_url = "/reciperequirements"
 
-@csrf_exempt
 @login_required
 def calculate_profit_and_revenue(purchases, menu_items):
     revenue = sum(purchase.quantity * purchase.menu_item.price for purchase in purchases)
@@ -112,7 +110,6 @@ def calculate_profit_and_revenue(purchases, menu_items):
     profit = revenue - total_cost
     return revenue, profit
 
-@csrf_exempt
 @login_required
 def profitrevenue_list(request):
     menu_items = MenuItem.objects.all()
