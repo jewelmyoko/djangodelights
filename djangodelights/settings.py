@@ -131,4 +131,5 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8080',
     'http://54.212.118.126',
     'http://ec2-54-212-118-126.us-west-2.compute.amazonaws.com',
+    'http://124.32.172.239',
     ]
